@@ -2,10 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xl-12 col-sl-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <input type="text" [(ngModel)]="filteredStatus">
+      <hr>
         <ul class="list-group">
           <li
             class="list-group-item"
-            *ngFor="let server of servers"
+            *ngFor="let server of servers | filter: filteredStatus: 'status'"
             [ngClass]="getStatusClasses(server)">
             <strong>{{ server.name | shorten: 15 }}</strong> |
             {{ server.instanceType | uppercase }} |

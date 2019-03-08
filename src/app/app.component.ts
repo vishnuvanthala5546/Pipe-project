@@ -35,6 +35,8 @@ export class AppComponent implements OnInit {
     }
   ];
 
+  filteredStatus = '';
+
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}){
       return{
         'list-group-item-success': server.status === 'stable',
